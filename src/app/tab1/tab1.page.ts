@@ -52,6 +52,11 @@ export class Tab1Page {
     });
   }
 
+  setPrice(price){
+    price = price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
+    return price
+  }
+
   getFeaturedProduct(){
     fetch('./assets/data/api-featured-product.json').then(res => res.json())
     .then(json => {

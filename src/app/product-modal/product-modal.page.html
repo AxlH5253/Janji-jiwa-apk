@@ -6,7 +6,7 @@
       </div>
       <div style="width: 60%; height: 100%; display: flex; flex-direction: column; justify-content: center; margin-left: 10px;">
         <div style="font-size: 12px; padding-bottom: 5px; font-weight: 600;">{{name}}</div>
-        <div style="font-size: 12px; padding-bottom: 5px;">{{price}}</div>
+        <div style="font-size: 12px; padding-bottom: 5px;">Rp.{{setPrice(initPrice)}}</div>
         <div style="font-size: 10px; padding-bottom: 5px;">Lorem, ipsum dolor sit amet</div>
       </div>
       <div style="width: 20%; height: 100%; display: flex; align-items: center;">
@@ -14,4 +14,186 @@
       </div>
       </div>
     </div>
+
+    <div style="width: 100%; height: 175px; display: flex; justify-content: center;">
+      <div style="width: 90%; height: 100%; ">
+        <div style="width: 100%; height: 20%; font-size: 14px; font-weight: 600; display: flex; align-items: center;">
+          Additional Topping
+        </div>
+
+        <div style="width: 100%; height: 80%; display: flex; align-items: center;">
+          <div style="height: 100%; width: 70%;">
+            
+            <div style="font-size: 12px; padding-bottom: 5px; font-weight: 600; display: flex; align-items: center;">
+              <ion-checkbox color="dark" 
+                 ng-model="cincau" 
+                 (ionChange)="addCincau()">
+            </ion-checkbox>&nbsp;Cincau
+            </div>
+
+            <div style="font-size: 12px; padding-bottom: 5px; font-weight: 600; display: flex; align-items: center;">
+              <ion-checkbox color="dark"
+              ng-model="coffe" 
+              (ionChange)="addCoffe()"
+              ></ion-checkbox>&nbsp;Coffe Jelly
+            </div>
+
+            <div style="font-size: 12px; padding-bottom: 5px; font-weight: 600; display: flex; align-items: center;">
+              <ion-checkbox color="dark" 
+              ng-model="extra" 
+              (ionChange)="addExtra()"
+              ></ion-checkbox>&nbsp;Extra Espresso
+            </div>
+
+            <div style="font-size: 12px; padding-bottom: 5px; font-weight: 600; display: flex; align-items: center;">
+              <ion-checkbox color="dark"
+              ng-model="vanilla" 
+              (ionChange)="addVanilla()"
+              ></ion-checkbox>&nbsp;Vanilla Ice Cream
+            </div>
+
+            <div style="font-size: 12px; padding-bottom: 5px; font-weight: 600; display: flex; align-items: center;">
+              <ion-checkbox color="dark"
+              ng-model="match" 
+              (ionChange)="addMatcha()"
+              ></ion-checkbox>&nbsp;Matcha Ice Cream
+            </div>
+
+            <div style="font-size: 12px; padding-bottom: 5px; font-weight: 600; display: flex; align-items: center;">
+              <ion-checkbox color="dark"
+              ng-model="chocolate" 
+              (ionChange)="addChocolate()"
+              ></ion-checkbox>&nbsp;Chocolate Ice Cream
+            </div>
+    
+          </div>
+
+          
+          <div style="height: 100%; width: 30%;">
+            <div style="font-size: 12px; margin-top: 4px; padding-bottom: 5px; font-weight: 600; display: flex; align-items: center;">
+              +3000
+            </div>
+
+            <div style="font-size: 12px; margin-top: 4px; padding-bottom: 5px; font-weight: 600; display: flex; align-items: center;">
+              +3000
+            </div>
+
+            <div style="font-size: 12px; margin-top: 4px; padding-bottom: 5px; font-weight: 600; display: flex; align-items: center;">
+              +5000
+            </div>
+
+            <div style="font-size: 12px; margin-top: 4px; padding-bottom: 5px; font-weight: 600; display: flex; align-items: center;">
+              +8000
+            </div>
+
+            <div style="font-size: 12px; margin-top: 4px; padding-bottom: 5px; font-weight: 600; display: flex; align-items: center;">
+              +8000
+            </div>
+
+            <div style="font-size: 12px; margin-top: 4px; padding-bottom: 5px; font-weight: 600; display: flex; align-items: center;">
+              +8000
+            </div>
+    
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+
+    <div style="width: 100%; height: 100px; margin-top: 5px; display: flex; justify-content: center;">
+      <div style="width: 90%; height: 100%; ">
+        <div style="width: 100%; height: 20%; font-size: 14px; font-weight: 600; display: flex; align-items: center; margin-bottom: 5px;">
+          Sugar Level
+        </div>
+        <ion-radio-group>
+          <div style="width: 100%; height: 80%; display: flex; align-items: center;">
+            <div style="height: 100%; width: 70%;">
+              
+              <div style="font-size: 12px; padding-bottom: 5px; font-weight: 600; display: flex; align-items: center;">
+                <ion-radio checked value="normal"></ion-radio>&nbsp;Normal
+              </div>
+
+              <div style="font-size: 12px; padding-bottom: 5px; font-weight: 600; display: flex; align-items: center;">
+                <ion-radio value="half"></ion-radio>&nbsp;Half
+              </div>
+
+              <div style="font-size: 12px; padding-bottom: 5px; font-weight: 600; display: flex; align-items: center;">
+                <ion-radio value="less"></ion-radio>&nbsp;Less
+              </div>
+      
+            </div>
+
+          </div>
+      </ion-radio-group>
+      </div>
+    </div>
+
+    <div style="width: 100%; height: 100px; display: flex; justify-content: center; margin-top: 7px;">
+      <div style="width: 90%; height: 100%; ">
+        <div style="width: 100%; height: 20%; font-size: 14px; font-weight: 600; display: flex; align-items: center; margin-bottom: 5px;">
+          Ice Level
+        </div>
+        <ion-radio-group>
+          <div style="width: 100%; height: 80%; display: flex; align-items: center;">
+            <div style="height: 100%; width: 70%;">
+              
+              <div style="font-size: 12px; padding-bottom: 5px; font-weight: 600; display: flex; align-items: center;">
+                <ion-radio checked value="normal"></ion-radio>&nbsp;Normal
+              </div>
+
+              <div style="font-size: 12px; padding-bottom: 5px; font-weight: 600; display: flex; align-items: center;">
+                <ion-radio value="half"></ion-radio>&nbsp;Half
+              </div>
+
+              <div style="font-size: 12px; padding-bottom: 5px; font-weight: 600; display: flex; align-items: center;">
+                <ion-radio value="less"></ion-radio>&nbsp;Less
+              </div>
+      
+            </div>
+
+          </div>
+      </ion-radio-group>
+      </div>
+    </div>
+
+    <div style="width: 100%;  display: flex; justify-content: center; margin-top: 7px;">
+      <div style="width: 90%; height: 100%; ">
+        <div style="width: 100%; height: 20%; font-size: 14px; font-weight: 600; display: flex; align-items: center; margin-bottom: 5px;">
+          Special Instructions
+        </div>
+          <ion-input style="border: 1px solid black; font-size: 10px; border-radius: 5px;" placeholder="Add Instructions"></ion-input>
+      </div>
+    </div>
+
+    <div style="width: 100%; display: flex; justify-content: center; margin-top: 12px;">
+      <div style="width: 90%; height: 100%; ">
+        <div style="width: 100%; height: 20%; font-size: 14px; font-weight: 600; display: flex; align-items: center; margin-bottom: 5px;">
+          Qty
+        </div>
+        <div style="display: flex; align-items: center;">
+          <ion-button style="width: 30px; height: 30px;" color="secondary font-size:18px" (click)="updateQntValue('sub')">-</ion-button>
+          <ion-card style="width: 30px; display: flex; justify-content: center; align-items: center; height: 30px;font-size:16px">{{qnty}}</ion-card>
+          <ion-button style="width: 30px; height: 30px;" color="secondary font-size:18px" (click)="updateQntValue('add')">+</ion-button>
+        </div>
+      </div>
+    </div>
+
 </ion-content>
+
+<ion-footer>
+  <div style="width: 100%; height: 70px; display: flex; justify-content: center;">
+    <div style="width: 100%; height: 90%; background-color: #f5d7de; border-radius: 30px; display: flex; align-items: center; justify-content: space-between;">
+
+    <div style="padding: 35px;">
+      <div style="font-size: 10px; margin-bottom: 5px;">Price</div>
+      <div style="font-weight: bold;">Rp.{{setPrice(price*qnty)}}</div>
+    </div>
+
+    <div>
+      <ion-button class="submit-btn" shape="round" color="secondary">Pesan Sekarang</ion-button>
+    </div>
+  </div>
+  </div>
+</ion-footer>
