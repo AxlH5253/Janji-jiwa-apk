@@ -1,0 +1,45 @@
+ion-button {
+  --text-decoration: none;
+  text-transform: none;
+  font-family:Candara;
+  width: 75%;
+  height: 40px;
+  border-radius: 100%;
+  font-weight: bold;
+  font-size: 15px;
+  position: absolute;
+  top: 10pc;
+}
+
+.username{
+  color: black;
+  font-size:12px;
+}
+
+.body-top{
+  width: 100%; 
+  display: flex; 
+  justify-content: center;
+}
+
+.body-bottom{
+  background:white; 
+  height:500px;
+  width: 100%; 
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+
+ion-img {
+  max-width: 100%;
+  height: auto; 
+  display: block;
+}
+
+ion-segment-button {
+  --padding-bottom: 0px;
+  --padding-top: 0px;
+  --margin-bottom: 0px;
+  --margin-top: 0px;
+  --width:30px;
+}

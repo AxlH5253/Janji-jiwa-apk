@@ -1,0 +1,7 @@
+{
+  "name": "janjiwa",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
