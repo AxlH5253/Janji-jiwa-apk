@@ -1,4 +1,4 @@
-import { Component, ViewChild  } from '@angular/core';;
+import { Component} from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { ProductModalPage} from '../product-modal/product-modal.page';
 
@@ -16,6 +16,8 @@ export class Tab1Page {
   slideOpts = {
     initialSlide: 1,
     autoplay:true,
+    loop:true,
+    autoplayDisableOnInteraction: false,
     slidesPerView: 1,
     speed: 400,
     cubeEffect: {
@@ -29,7 +31,8 @@ export class Tab1Page {
   slideProductOpts = {
     initialSlide: 1,
     slidesPerView: 2,
-    speed: 400,
+    speed: 300,
+    autoplay:true,
     cubeEffect: {
       shadow: true,
       slideShadows: true,
@@ -64,11 +67,12 @@ export class Tab1Page {
     });
   }
   
-  async presentModal(id) {
+  async presentModal(id,type) {
     const modal = await this.modalController.create({
       component: ProductModalPage,
       componentProps: {
         'id': id,
+        'type': type
       },
       cssClass: 'modal',
     });

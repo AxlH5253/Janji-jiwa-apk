@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavParams} from '@ionic/angular';
+import { ModalController } from '@ionic/angular';
 
 
 @Component({
@@ -9,6 +10,7 @@ import { NavParams} from '@ionic/angular';
 })
 export class ProductModalPage {
   id : any;
+  type: any;
   img: any;
   name: any;
   price = 0;
@@ -23,9 +25,10 @@ export class ProductModalPage {
   matcha = false;
   chocolate = false;
 
-  constructor(navParams: NavParams) {
+  constructor(navParams: NavParams, public modalController: ModalController) {
     this.id = navParams.get('id')
-    this.getFeaturedProduct()
+    this.type = navParams.get('type')
+    this.getProduct(this.type)
   }
 
   setPrice(price){
@@ -33,8 +36,26 @@ export class ProductModalPage {
     return price
   }
 
+  getProduct(type){
+    if(type == 'featured'){
+      this.getFeaturedProduct()
+    }else{
+      this.getPurchasedProduct()
+    }
+  }
+
   getFeaturedProduct(){
     fetch('./assets/data/api-featured-product.json').then(res => res.json())
+    .then(json => {
+      this.img = json.data[this.id].img
+      this.name = json.data[this.id].name
+      this.price = Number(json.data[this.id].price)
+      this.initPrice = Number(json.data[this.id].price)
+    });
+  }
+
+  getPurchasedProduct(){
+    fetch('./assets/data/api-last-purchased.json').then(res => res.json())
     .then(json => {
       this.img = json.data[this.id].img
       this.name = json.data[this.id].name
@@ -111,4 +132,9 @@ export class ProductModalPage {
     }
   }
 
+  dismiss() {
+    this.modalController.dismiss({
+      'dismissed': true
+    });
+  }
 }

@@ -1,9 +1,75 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Tab Two
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content color="tertiary">
 
-<ion-content></ion-content>
+  <div style="width: 100%; height: 182px;">
+    <h4 style="position: absolute; top: 6pc; left: 1pc; color: #36342f; font-weight: bold;">Pilih Menu</h4>
+  </div>
+  <div class="body-top">
+    <ion-button style="margin-right: 20px;" shape="round" color="secondary">Delivery</ion-button>
+    <ion-button style="margin-left: 20px;" shape="round" color="light">Pick Up</ion-button>
+  </div>
+
+  
+   <div class="body-bottom">
+
+    <div style=" width: 100%; padding: 0px 20px; margin-top: 25px;">
+      <div style=" width: 100%;height:10%;">
+        <div style="font-size: 14px; font-weight: 600; color: black;">
+          Your Favorite
+        </div>
+      </div>
+
+      <div style="width: 100%;height:75px; padding: 5px; margin: 10px 0px; display: flex; color: black;"
+           *ngFor="let item of (lastPurchaseProduct) ; let i = index">
+
+        <ion-img style="width: 23%;height: 100%;" [src]="item.img"></ion-img>
+        <div style="width: 54%; height: 100%; margin-left: 5px;">
+          <div style="font-size: 12px; padding-bottom: 5px; font-weight: 600;">{{item.name}}</div>
+          <div style="font-size: 12px; padding-bottom: 5px;">Rp.{{setPrice(item.price)}}</div>
+          <div style="font-size: 10px; padding-bottom: 5px;">Lorem, ipsum dolor sit amet</div>
+        </div>
+        <div style="width: 23%; height: 100%; display: flex; flex-direction: column; justify-content: center;">
+          <div style="width: 100%; height: 50%; display: flex; align-items: center; justify-content: center;">
+            <img style="width: 20px; height: 20px;" src='https://www.shareicon.net/data/2015/12/12/686167_heart_512x512.png'/>
+          </div>
+          <div style="width: 100%; height: 50%; display: flex; align-items: center; justify-content: center;">
+            <ion-button style="width: 30px; height: 30px;" color="secondary font-size:20px" (click)="presentModal(i,'last')">+</ion-button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div style=" width: 100%; padding: 0px 20px; margin-top: 25px;">
+      <div style=" width: 100%;height:10%;">
+        <div style="font-size: 14px; font-weight: 600; color: black;">
+          Iced Coffee
+        </div>
+      </div>
+
+      <div style="width: 100%;height:75px; padding: 5px; margin: 10px 0px; display: flex; color: black;"
+           *ngFor="let item of (featuredProduct) ; let i = index">
+
+        <ion-img style="width: 23%;height: 100%;" [src]="item.img"></ion-img>
+        <div style="width: 54%; height: 100%; margin-left: 5px;">
+          <div style="font-size: 12px; padding-bottom: 5px; font-weight: 600;">{{item.name}}</div>
+          <div style="font-size: 12px; padding-bottom: 5px;">Rp.{{setPrice(item.price)}}</div>
+          <div style="font-size: 10px; padding-bottom: 5px;">Lorem, ipsum dolor sit amet</div>
+        </div>
+        <div style="width: 23%; height: 100%; display: flex; flex-direction: column; justify-content: center;">
+          <div style="width: 100%; height: 50%; display: flex; align-items: center; justify-content: center;">
+            <img style="width: 20px; height: 20px;" src='https://www.shareicon.net/data/2015/12/12/686167_heart_512x512.png'/>
+          </div>
+          <div style="width: 100%; height: 50%; display: flex; align-items: center; justify-content: center;">
+            <ion-button style="width: 30px; height: 30px;" color="secondary font-size:20px" (click)="presentModal(i,'featured')">+</ion-button>
+          </div>
+        </div>
+
+      </div>
+
+  </div>
+
+    
+  </div>
+  
+
+</ion-content>
